@@ -35,7 +35,3 @@ jobs:
         
       - name: Run StoryBook Tests.
         run: pnpm test
-          #echo "Let us Running the Stroy Book Test..."
-          #pnpm test-storybook
-          #pnpm test
-          
