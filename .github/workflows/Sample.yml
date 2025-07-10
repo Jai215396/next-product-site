@@ -1,0 +1,15 @@
+# This is the Test File to Print Statement.
+name: Print Stample Statement.
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  Hi-Jaideep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Statement.
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "Let Us Start to Write the Github the GitHub Actions Pipeline..."
