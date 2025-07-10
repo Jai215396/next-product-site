@@ -24,10 +24,6 @@ jobs:
         run: |
           npm i -g pnpm
           pnpm install
-
-      # Optional.
-      - name: Configure Worflow
-        uses: ./.github/actions/configure
         
       - name: Build The Project
         run: pnpm build
