@@ -1,0 +1,39 @@
+# DevOps Task: 
+# 1. Create a new workflow file under /.github/workflows or actions folder under /.github/actions, which will store changes to the GitHub Actions.
+# For Example: /.github/workflows/deploy.yml)
+
+name: Build & Deploy to Vercel
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  Build-And-Deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Codes.
+        uses: actions/checkout@v4
+
+      - name: Setup Node JS.
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      - name: Install Dependencies.
+        run: pnpm install
+
+      - name: Run Lint.
+        run: pnpm lint
+
+      - name: Build The Project.
+        run: pnpm build
+
+      - name: Run StoryBook Tests.
+        run: pnpm test
+        
