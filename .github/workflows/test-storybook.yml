@@ -1,11 +1,11 @@
-# DevOps Task - Jaideep.
-#  https://github.com/jhanke00/next-product-site/issues/17
-#  GitHub Actions to run storybook tests to make sure that those tests are passing with every PR.
+# DevOps Issue - Jaideep.
+# Link: https://github.com/jhanke00/next-product-site/issues/17
+# Task: GitHub Actions to run storybook tests to make sure that those tests are passing with every PR.
 
 name: StoryBook Test.
 on:
   push:
-    branches: [ "XXXmain" ] # Branch Name. Commented for Now.
+    branches: [ "main" ] # Branch Name. Commented for Now.
 
 jobs:
   StoryBook-Test:
