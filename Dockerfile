@@ -6,8 +6,11 @@
 FROM node:18-alpine AS deps
 WORKDIR /app
 
-COPY package.json package-lock.json* ./  
-RUN npm install
+RUN apk add --no-cache python3 make g++
+
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install 
 
 # Build the Source Code.
 FROM node:18-alpine AS builder
@@ -22,7 +25,6 @@ FROM node:18-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV production
 
-# Install Only Production Dependencies.
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
