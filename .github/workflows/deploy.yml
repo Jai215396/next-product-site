@@ -42,13 +42,7 @@ jobs:
       - name: Run StoryBook Tests.
         run: pnpm test
 
-      - name: Debug Secrets.
-        run: |
-          echo "Token: ${{ secrets.VERCEL_PROJECT_ID }}"
-          echo "ORG: ${{ secrets.VERCEL_ORG_ID }}"
-          echo "PROJECT: ${{ secrets.VERCEL_PROJECT_ID }}"
-
-      # Updated the Secrets Correct - 01.
+      # Updated the Secrets.
       - name: Deploy to Vercel.
         uses: amondnet/vercel-action@v25
         with:
