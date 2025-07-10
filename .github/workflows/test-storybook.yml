@@ -34,8 +34,8 @@ jobs:
         run: pnpm build
         
       - name: Run StoryBook Tests.
-        run: |
-          echo "Let us Running the Stroy Book Test..."
-          pnpm test-storybook
+        run: pnpm test
+          #echo "Let us Running the Stroy Book Test..."
+          #pnpm test-storybook
           #pnpm test
           
