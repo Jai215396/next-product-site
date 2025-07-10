@@ -15,10 +15,6 @@ jobs:
       - name: Checkout GitHub Repository.
         uses: actions/checkout@v4
 
-      # Optional.
-      - name: Configure Worflow
-        uses: ./.github/actions/configure
-        
       - name: Setup Node JS.
         uses: actions/setup-node@v4
         with:
@@ -29,6 +25,10 @@ jobs:
           npm i -g pnpm
           pnpm install
 
+      # Optional.
+      - name: Configure Worflow
+        uses: ./.github/actions/configure
+        
       - name: Build The Project
         run: pnpm build
         
