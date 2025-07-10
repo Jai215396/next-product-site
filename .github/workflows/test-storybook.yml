@@ -31,5 +31,5 @@ jobs:
       - name: Run StoryBook Tests.
         run: |
           echo "Let us Running the Stroy Book Test..."
-          #npm run test-storybook
+          pnpm run test
           
