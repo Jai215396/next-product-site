@@ -3,7 +3,7 @@
 
 name: StoryBook Test.
 on:
-  pull_request:
+  push:
     branches: [ "main" ] # Branch Name.
 
 jobs:
