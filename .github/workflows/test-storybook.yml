@@ -25,7 +25,11 @@ jobs:
           npm i -g pnpm
           pnpm install
 
+      - name: Build The Project
+        run: pnpm build
+        
       - name: Run StoryBook Tests.
         run: |
           echo "Let us Running the Stroy Book Test..."
+          #npm run test-storybook
           
