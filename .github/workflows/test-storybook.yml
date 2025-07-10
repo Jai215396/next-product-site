@@ -5,7 +5,7 @@
 name: StoryBook Test.
 on:
   push:
-    branches: [ "XXXmain" ] # Branch Name. Commented for Now.
+    # branches: [ "main" ] # Branch Name. Commented for Now.
 
 jobs:
   StoryBook-Test:
