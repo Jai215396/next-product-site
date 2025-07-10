@@ -6,8 +6,8 @@ name: Build & Deploy to Vercel
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
 
 jobs:
   Build-And-Deploy:
@@ -32,6 +32,12 @@ jobs:
         run: pnpm lint
 
       - name: Build The Project.
+        run: pnpm build
+
+      - name: Run StoryBook Tests.
+        run: pnpm test
+
+      - name: Build The Project
         run: pnpm build
 
       - name: Run StoryBook Tests.
