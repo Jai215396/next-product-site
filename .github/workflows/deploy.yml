@@ -1,8 +1,6 @@
 # DevOps Task: 
 # 1. Create a new workflow file under /.github/workflows or actions folder under /.github/actions, which will store changes to the GitHub Actions.
 # For Example: /.github/workflows/deploy.yml)
-# Jaideep.
-
 
 name: Build & Deploy to Vercel
 on:
@@ -42,4 +40,14 @@ jobs:
 
       - name: Run StoryBook Tests.
         run: pnpm test
-        
+
+      - name: Deploy to Vercel.
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          
