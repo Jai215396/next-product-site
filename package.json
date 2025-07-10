@@ -12,6 +12,7 @@
     "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
     "prepare": "husky",
     "generate-large-data": "node ./scripts/generateLargeData.js",
     "generate-small-data": "node ./scripts/generateSmallData.js"
