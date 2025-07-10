@@ -1,4 +1,5 @@
 # DevOps Task - Jaideep.
+#  https://github.com/jhanke00/next-product-site/issues/17
 #  GitHub Actions to run storybook tests to make sure that those tests are passing with every PR.
 
 name: StoryBook Test.
@@ -20,7 +21,7 @@ jobs:
           node-version: 18
 
       - name: Install Dependencies.
-        run: npm ci
+        run: npm install
 
       - name: Run StoryBook Tests.
         run: |
