@@ -1,4 +1,15 @@
-# DevOps Task: 
+# DevOps Task - Jaideep.
 #  GitHub Actions to run storybook tests to make sure that those tests are passing with every PR.
 
 name: StoryBook Test.
+on:
+  pull_request:
+    branches: [ "main", "master", "develop" ] # Branch Name.
+
+jobs:
+  StoryBook-Test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub Repository.
+        uses: actions/checkout@v4
