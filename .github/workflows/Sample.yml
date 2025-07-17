@@ -2,8 +2,9 @@
 name: Print Stample Statement.
 
 on:
-  push:
-    branches: [ main ]  # Commented As of Now - Jaideep.
+  workflow_call:
+  # push:
+  #  branches: [ main ]  # Commented As of Now - Jaideep.
 
 jobs:
   Hi-Jaideep:
