@@ -13,3 +13,10 @@ on:
 jobs:
   call-sample:
     uses: ./.github/workflows/Sample.yml 
+
+  deploy:
+    needs: call-sample
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy step
+        run: echo "Running deployment after sample"
