@@ -12,4 +12,4 @@ on:
 
 jobs:
   call-sample:
-    uses: ./.github/workflows/sample.yml 
+    uses: ./.github/workflows/Sample.yml 
