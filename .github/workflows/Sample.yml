@@ -8,5 +8,7 @@ jobs:
   sample-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a message from Sample
-        run: echo "Hello from Sample Workflow"
+      - name: Print Statement.
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "Let Us Start to Write the Github the GitHub Actions Pipeline..."
