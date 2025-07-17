@@ -1,16 +1,12 @@
 # This is the Test File to Print Statement.
-name: Print Stample Statement.
+name: Sample Workflow
 
 on:
-  workflow_call:
-  # push:
-  #  branches: [ main ]  # Commented As of Now - Jaideep.
+  workflow_call:  # makes this file callable from other workflows
 
 jobs:
-  Hi-Jaideep:
+  sample-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Statement.
-        run: |
-          echo "Hello, GitHub Actions!"
-          echo "Let Us Start to Write the Github the GitHub Actions Pipeline..."
+      - name: Print a message from Sample
+        run: echo "Hello from Sample Workflow"
