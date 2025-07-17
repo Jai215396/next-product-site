@@ -9,7 +9,11 @@ on:
     branches: [ "main" ]
 
 jobs:
+  call-sample:
+    uses: ./.github/workflows/sample.yml
+    
   Build-And-Deploy:
+    needs: call-sample
     runs-on: ubuntu-latest
     
     steps:
