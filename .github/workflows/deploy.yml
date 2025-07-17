@@ -6,13 +6,16 @@
 name: Build & Deploy to Vercel
 on:
   push:
-    branches: [ "XXXmain" ]
+    branches: [ "main" ]
 
 jobs:
   Build-And-Deploy:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Call the Sample.yml file
+        uses: ./.github/workflows/Sample.yml
+        
       - name: Checkout Codes.
         uses: actions/checkout@v4
 
