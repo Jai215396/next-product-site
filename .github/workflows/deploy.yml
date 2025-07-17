@@ -20,3 +20,42 @@ jobs:
     steps:
       - name: Deploy step
         run: echo "Running deployment after sample"
+
+      - name: Checkout Codes.
+        uses: actions/checkout@v4
+
+      - name: Setup Node JS.
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      - name: Install Dependencies.
+        run: pnpm install
+
+      - name: Run Lint.
+        run: pnpm lint
+
+      - name: Build The Project.
+        run: pnpm build
+
+      - name: Run StoryBook Tests.
+        run: pnpm test
+
+      - name: Build The Project
+        run: pnpm build
+
+      - name: Run StoryBook Tests.
+        run: pnpm test
+
+      # Updated the Secrets.
+      - name: Deploy to Vercel.
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
