@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Call the Sample.yml file
         uses: ./.github/workflows/Sample.yml
+        with:
+          environment: "production"
         
       - name: Checkout Codes.
         uses: actions/checkout@v4
